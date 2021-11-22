@@ -6,7 +6,7 @@ wn = turtle.Screen()
 wn.title("PingPongGame")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
-wn.tracer(0) #stop window from updating
+wn.tracer(0)
 
 #Score
 score_a = 0
@@ -14,11 +14,11 @@ score_b = 0
 
 #Paddle1
 paddle_a = turtle.Turtle()
-paddle_a.speed(0) #Maximum possible speed
+paddle_a.speed(0)
 paddle_a.shape("square")
 paddle_a.color("white")
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
-paddle_a.penup() #not showing the line
+paddle_a.penup()
 paddle_a.goto(-350, 0)
 
 #paddle2
@@ -37,7 +37,7 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 2 #change x axis 2 pixel
+ball.dx = 2 
 ball.dy = -2
 
 #Pen
@@ -52,27 +52,27 @@ pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "norm
 #function
 def paddle_a_up():
     y = paddle_a.ycor()
-    y += 20 #increase
+    y += 20 
     paddle_a.sety(y)
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 20 #decrease
+    y -= 20 
     paddle_a.sety(y)
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 20 #increase
+    y += 20 
     paddle_b.sety(y)
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 20 #decrease
+    y -= 20 
     paddle_b.sety(y)
 
 #keyboard binding
-wn.listen() #liste to keyboard input
-wn.onkeypress(paddle_a_up, "w") #pres "w" call the function
+wn.listen() 
+wn.onkeypress(paddle_a_up, "w") 
 wn.onkeypress(paddle_a_down, "s")
 
 wn.onkeypress(paddle_b_up, "Up") 
@@ -90,7 +90,7 @@ while True:
     #Border checking
     if ball.ycor() > 290:
         ball.sety(290)
-        ball.dy *= -1 #reverse direction of the ball
+        ball.dy *= -1 #reverse direction
         winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
     if ball.ycor() < -290:
